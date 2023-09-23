@@ -392,7 +392,7 @@ struct tache *modifierDeadline(tache *t, date deadline) {
 
 struct tache *supprimeParIdentifiant(tache *t, int id) {
     if(t == NULL) return NULL;
-    if(t->identifiant) return t->suivant;
+    if(t->identifiant == id) return t->suivant;
     tache * temp, * temp1;
     temp = t;
     while(t->suivant != NULL && t->suivant->identifiant != id) {
